@@ -1,15 +1,11 @@
 #include<iostream>
-
+#include"../include/main.h"
 
 
 
 int main()
 {
-
-
-	std::cout << "Hello World" << std::endl;
-
-
-
+	// Top level welcome statement
+	Cal::Printer(std::string("  WELCOME TO THE CALCULATOR  "));
 
 }
