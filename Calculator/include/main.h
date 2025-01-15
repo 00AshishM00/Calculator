@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
+#include <cctype>
 
 namespace Cal
 {	
-
+	//custom function for deleting and handeling deleted pointer 
 	template<typename input>
 	void ptrdel(input*& value)
 	{
@@ -18,6 +19,7 @@ namespace Cal
 		}
 	}
 
+	//Normal print function 
 	template<typename input>
 	void NPrinter(const input& value)
 	{
@@ -27,6 +29,7 @@ namespace Cal
 		ptrdel(valuep);
 	}
 
+	//Menu print function
 	template<typename input1,typename input2>
 	void Menu(const input1& value1, const input2& value2)
 	{
@@ -39,6 +42,40 @@ namespace Cal
 		ptrdel(val2);
 
 	}
+
+	//coparing input
+	int inputassignment( char& value1,char& value2, int& value3) 
+	{
+		
+		if (value1 == value2)
+		{
+			return value3;
+		}
+		else
+		{
+			NPrinter(std::string("        Error >>>"));
+
+			NPrinter(std::string("        Wrong input"));
+			return 0;
+
+		}
+
+	}
+	
+
+	//lowercase make ther upper case.
+	char ToUpper(char letter)
+	{
+		if (letter >= 'a' && letter <= 'z')
+		{
+			return letter - 32;
+		}
+
+		return letter;
+
+	}
+
+
 
 }
 
