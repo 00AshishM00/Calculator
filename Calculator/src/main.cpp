@@ -8,37 +8,38 @@ int main()
 	// Top level welcome statement
 	Cal::NPrinter(std::string("  WELCOME TO THE CALCULATOR  "));
 
-	Cal::NPrinter(std::string("    "));
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
+	Cal::emtyline();
+	
 	
 	//Menu option 
 	Cal::NPrinter(std::string("     CHOOSE YOUR OPTION    "));
 	
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();;
 
 	Cal::Menu(std::string("     A. "),std::string("Add"));
 
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 
 	Cal::Menu(std::string("     B. "),std::string("Subtract"));
 
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 
 	Cal::Menu(std::string("     C. "),std::string("Multiply"));
 
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 
 	Cal::Menu(std::string("     D. "),std::string("Divide"));
 
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 
 	Cal::Menu(std::string("     E. "),std::string("Exit"));
 	
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 	
 	Cal::NPrinter(std::string("    put your opption >>>   "));
 	
-	Cal::NPrinter(std::string("    "));
+	Cal::emtyline();
 
 
 
@@ -54,7 +55,11 @@ int main()
 	char targetA= 'A';
 	int numberA = 1;
 	
-	int Ans = Cal::inputassignment(upopinput, targetA, numberA);
+
+
+	std::string Rightinput = "A";
+
+	int Ans = Cal::inputassignment(upopinput, targetA, numberA, Rightinput);
 
 	Cal::NPrinter(Ans);
 	

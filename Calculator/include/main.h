@@ -29,6 +29,11 @@ namespace Cal
 		ptrdel(valuep);
 	}
 
+	void emtyline()
+	{
+		NPrinter(std::string(" "));
+	}
+
 	//Menu print function
 	template<typename input1,typename input2>
 	void Menu(const input1& value1, const input2& value2)
@@ -43,10 +48,21 @@ namespace Cal
 
 	}
 
-	//coparing input
-	int inputassignment( char& value1,char& value2, int& value3) 
+
+	std::string rightinput(std::string& str)
 	{
-		
+		return str;
+	}
+
+	
+	
+
+	//coparing input
+	int inputassignment( char& value1,char& value2, int& value3, std::string Rightinput)
+	{
+		 
+		std::string Rightin = rightinput(Rightinput);
+
 		if (value1 == value2)
 		{
 			return value3;
@@ -54,8 +70,8 @@ namespace Cal
 		else
 		{
 			NPrinter(std::string("        Error >>>"));
-
 			NPrinter(std::string("        Wrong input"));
+			Menu(std::string("        Right inputs are "), Rightin);
 			return 0;
 
 		}
