@@ -1,6 +1,10 @@
 #pragma once
 #include <iostream>
 #include <cctype>
+#include <typeinfo>
+#include <stdexcept>
+#include<cmath>
+#include<string>
 
 namespace Cal
 {	
@@ -49,35 +53,43 @@ namespace Cal
 	}
 
 
-	std::string rightinput(std::string& str)
+	//comparing input
+	template<typename T>
+	static int inputassignment(T&  value1, const char& minC,const char& maxC, const int& minI,const int& maxI)
 	{
-		return str;
-	}
-
-	
-	
-
-	//coparing input
-	int inputassignment( char& value1,char& value2, int& value3, std::string Rightinput)
-	{
-		 
-		std::string Rightin = rightinput(Rightinput);
-
-		if (value1 == value2)
+		if constexpr (std::is_same_v<T,char>)
 		{
-			return value3;
+		   if(value1<minC||value1>maxC)
+		   {
+			   return 0;
+		   }
+			
+		   double mappednum = minI + (static_cast<double>(value1 - minC) * (maxI - minI)) / (maxC - minC);
+		   return static_cast<int>(std::round(mappednum));
+
+		}
+
+		else if constexpr (std::is_same_v<T, std::string> || std::is_same_v<T, int>)
+		{
+			return 0;
 		}
 		else
 		{
-			NPrinter(std::string("        Error >>>"));
-			NPrinter(std::string("        Wrong input"));
-			Menu(std::string("        Right inputs are "), Rightin);
-			return 0;
+			
 
 		}
-
 	}
 	
+
+	void validchecks(int& input,std::string& str)
+	{
+		if (input == 0)
+		{
+			NPrinter(std::string(" invalid input "));
+			Menu(std::string("The right inputs are: "), str);
+			
+		}
+	}
 
 	//lowercase make ther upper case.
 	char ToUpper(char letter)
@@ -90,6 +102,9 @@ namespace Cal
 		return letter;
 
 	}
+
+
+	
 
 
 

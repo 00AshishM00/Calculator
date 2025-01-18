@@ -42,30 +42,16 @@ int main()
 	Cal::emtyline();
 
 
-
-
-
-
 	//input
 	char opinput;
 	std::cin >> opinput;
 	char upopinput = Cal::ToUpper(opinput);
 
-
-	char targetA= 'A';
-	int numberA = 1;
-	
-
-
 	std::string Rightinput = "A";
 
-	int Ans = Cal::inputassignment(upopinput, targetA, numberA, Rightinput);
+	int Ans = Cal::inputassignment(upopinput, 'A', 'A', 1, 1);
 
-	Cal::NPrinter(Ans);
-	
-	
-
-
+	Cal::validchecks(Ans, Rightinput);
 
 
 
