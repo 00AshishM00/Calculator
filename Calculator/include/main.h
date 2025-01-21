@@ -87,10 +87,34 @@ namespace Cal
 
 	}
 
+	char Toupper(char ch)
+	{
+		if (ch >= 'a' && ch <= 'z')
+		{
+			ch = ch - 32;
+			return ch;
+		}
+		else
+		{
+			return ch;
+		}
+	}
 
 
+	int mpping(char& input,char& minC, char& maxC, int minI, int maxI,std::string str)
+	{
+		if (input > maxC || input < minC)
+		{
+			std::cout << "invalid input.Right inputs are -" << str << '\n';
+			std::exit(0);
+		}
+		else
+		{
+			double minput = minI + (static_cast<double>(input - minC) * (maxI - minI) / (maxC - minC));
+			return static_cast<int>(std::round(minput));
+		}
 
-
+	}
 
 
 

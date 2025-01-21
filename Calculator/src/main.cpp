@@ -35,11 +35,24 @@ int main()
 	
 	Cal::emtyline();
 	
+	char miOP = 'A';
+	char maOP = 'D';
+
+	int miIn = 1;
+	int maIn = 4;
+	
+	std::string input = "A B C D E";
 	
 
-	std::string input = "A B C D E";
 	char C = Cal::returnonlychar(input);
-	Cal::NPrinter(C);
+	
+	char ans = Cal::Toupper(C);
+	
+	int OP = Cal::mpping(ans, miOP, maOP, miIn, maIn, input);
+	
+	Cal::NPrinter(OP);
+
+
 
 	
 
