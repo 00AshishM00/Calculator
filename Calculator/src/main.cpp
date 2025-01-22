@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include"../include/main.h"
 
 
@@ -13,7 +13,7 @@ int main()
 	//Menu option 
 	Cal::NPrinter(std::string("     CHOOSE YOUR OPTION    "));
 	
-	Cal::emtyline();;
+	Cal::emtyline();
 
 	Cal::Menu(std::string("A. "),std::string("Add"));
 
@@ -44,13 +44,14 @@ int main()
 	std::string input = "A B C D E";
 	
 
-	char C = Cal::returnonlychar(input);
+	char C = Cal::returnonlychar(input, miOP, maOP);
 	
-	char ans = Cal::Toupper(C);
-	
-	int OP = Cal::mpping(ans, miOP, maOP, miIn, maIn, input);
+	int OP = Cal::mpping(C, miOP, maOP, miIn, maIn);
 	
 	Cal::NPrinter(OP);
+
+
+	Cal::Application(OP);
 
 
 

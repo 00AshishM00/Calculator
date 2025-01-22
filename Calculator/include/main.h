@@ -53,8 +53,20 @@ namespace Cal
 	}
 
 
+	char Toupper(char ch)
+	{
+		if (ch >= 'a' && ch <= 'z')
+		{
+			ch = ch - 32;
+			return ch;
+		}
+		else
+		{
+			return ch;
+		}
+	}
 
-	char returnonlychar(std::string str)
+	char returnonlychar(std::string& str,char& minC,char& maxC)
 	{
 
 		char in;
@@ -75,9 +87,15 @@ namespace Cal
 			{
 				std::cout << "invalid input.Right inputs are -" << str << '\n';
 			}
+			else if(toupper(input[0])<minC || toupper(input[0]) >maxC)
+			{
+				
+				std::cout << "inivalid input.Right inputs are -" << str << '\n';
+
+			}
 			else
 			{
-				in = input[0];
+				in = toupper(input[0]);
 				break;
 			}
 
@@ -87,35 +105,69 @@ namespace Cal
 
 	}
 
-	char Toupper(char ch)
-	{
-		if (ch >= 'a' && ch <= 'z')
-		{
-			ch = ch - 32;
-			return ch;
-		}
-		else
-		{
-			return ch;
-		}
-	}
 
 
-	int mpping(char& input,char& minC, char& maxC, int minI, int maxI,std::string str)
+	int mpping(char& input,char& minC, char& maxC, int minI, int maxI)
 	{
-		if (input > maxC || input < minC)
-		{
-			std::cout << "invalid input.Right inputs are -" << str << '\n';
-			std::exit(0);
-		}
-		else
-		{
-			double minput = minI + (static_cast<double>(input - minC) * (maxI - minI) / (maxC - minC));
-			return static_cast<int>(std::round(minput));
-		}
+	
+		double minput = minI + (static_cast<double>(input - minC) * (maxI - minI) / (maxC - minC));
+		return static_cast<int>(std::round(minput));
 
 	}
 
+	void Application(int& ops)
+	{
+		double input1;
+		double input2;
+		double ans=1;
+
+		while (true)
+		{
+			std::cout << "Put your first number \n>>>";
+			std::cin >> input1;
+
+			if (std::cin.fail())
+			{	
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid input.Please input a Number";
+			}
+			else
+			{
+				break;
+			}
+				
+		}
+		while (true)
+		{
+			std::cout << "Put your secound number \n>>>";
+			std::cin >> input2;
+			
+			if (std::cin.fail())
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid input.Please input a Number";
+			}
+			else
+			{
+				break;
+			}
+		}
+		
+		switch (ops)
+		{
+		case 1:
+			ans = input1 + input2;
+			NPrinter(std::string("your answer is-"));
+			std::cout << ">>>" << ans << '\n';
+			
+			break;
+
+		}
+
+		
+	}
 
 
 
