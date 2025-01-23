@@ -48,9 +48,6 @@ int main()
 	
 	int OP = Cal::mpping(C, miOP, maOP, miIn, maIn);
 	
-	Cal::NPrinter(OP);
-
-
 	Cal::Application(OP);
 
 

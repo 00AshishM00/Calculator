@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <cmath>
 #include <string>
+#include <sstream>
+#include <limits>
 
 namespace Cal
 {
@@ -117,54 +119,53 @@ namespace Cal
 
 	void Application(int& ops)
 	{
-		double input1;
-		double input2;
-		double ans=1;
+		double ans;
 
-		while (true)
+		auto getvalidateInput = [](const std::string& prompt) -> double
 		{
-			std::cout << "Put your first number \n>>>";
-			std::cin >> input1;
-
-			if (std::cin.fail())
-			{	
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid input.Please input a Number";
-			}
-			else
-			{
-				break;
-			}
-				
-		}
-		while (true)
-		{
-			std::cout << "Put your secound number \n>>>";
-			std::cin >> input2;
+				double value;
+				std::string userInput;
 			
-			if (std::cin.fail())
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid input.Please input a Number";
-			}
-			else
-			{
-				break;
-			}
-		}
-		
+				while (true)
+				{
+					std::cout << prompt;
+					std::getline(std::cin, userInput);
+
+					std::stringstream ss(userInput);
+					if (ss >> value && ss.eof())
+					{
+						return value;
+					}
+					else
+					{
+						std::cout << "Invalid input.Please input a valid number.\n";
+					}
+
+				}
+
+
+		};
+
+		double input1 = getvalidateInput("Put your first number \n>>>");
+
+		double input2 = getvalidateInput("Put your secound number \n>>>");
+
 		switch (ops)
 		{
 		case 1:
 			ans = input1 + input2;
-			NPrinter(std::string("your answer is-"));
-			std::cout << ">>>" << ans << '\n';
-			
+			NPrinter(std::string("your answer is:"));
+			std::cout << ">>> " << ans << '\n';
+			break;
+		
+		default :
+
+			NPrinter(std::string("put a valid input"));
 			break;
 
 		}
+
+
 
 		
 	}
