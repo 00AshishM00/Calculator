@@ -35,7 +35,7 @@ namespace Cal
 		ptrdel(valuep);
 	}
 
-	void emtyline()
+	void emptyline()
 	{
 		NPrinter(std::string(" "));
 	}

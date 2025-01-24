@@ -8,32 +8,32 @@ int main()
 	// Top level welcome statement........
 	Cal::NPrinter(std::string("  WELCOME TO THE CALCULATOR  "));
 
-	Cal::emtyline();
+	Cal::emptyline();
 	
 	//Menu option.......
 	Cal::NPrinter(std::string("     CHOOSE YOUR OPTION    "));
 	
-	Cal::emtyline();
+	Cal::emptyline();
 
 	Cal::Menu(std::string("A. "),std::string("Add"));
 
-	Cal::emtyline();
+	Cal::emptyline();
 
 	Cal::Menu(std::string("B. "),std::string("Subtract"));
 
-	Cal::emtyline();
+	Cal::emptyline();
 
 	Cal::Menu(std::string("C. "),std::string("Multiply"));
 
-	Cal::emtyline();
+	Cal::emptyline();
 
 	Cal::Menu(std::string("D. "),std::string("Divide"));
 
-	Cal::emtyline();
+	Cal::emptyline();
 
 	Cal::Menu(std::string("E. "),std::string("Exit"));
 	
-	Cal::emtyline();
+	Cal::emptyline();
 	
 	char miOP = 'A';
 	char maOP = 'E';
