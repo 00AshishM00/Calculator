@@ -5,12 +5,12 @@
 
 int main()
 {
-	// Top level welcome statement
+	// Top level welcome statement........
 	Cal::NPrinter(std::string("  WELCOME TO THE CALCULATOR  "));
 
 	Cal::emtyline();
 	
-	//Menu option 
+	//Menu option.......
 	Cal::NPrinter(std::string("     CHOOSE YOUR OPTION    "));
 	
 	Cal::emtyline();
@@ -36,10 +36,12 @@ int main()
 	Cal::emtyline();
 	
 	char miOP = 'A';
-	char maOP = 'D';
+	char maOP = 'E';
 
 	int miIn = 1;
-	int maIn = 4;
+	int maIn = 5;
+
+	int& ExitINdex = maIn;
 	
 	std::string input = "A B C D E";
 	
@@ -48,7 +50,8 @@ int main()
 	
 	int OP = Cal::mpping(C, miOP, maOP, miIn, maIn);
 	
-	Cal::Application(OP);
+	
+	Cal::Application(OP, ExitINdex);
 
 
 

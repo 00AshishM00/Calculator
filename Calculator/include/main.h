@@ -117,8 +117,13 @@ namespace Cal
 
 	}
 
-	void Application(int& ops)
+	void Application(int& ops,int& EI)
 	{
+		if (ops == EI)
+		{
+			NPrinter(std::string("Exiting Calculator"));
+			std::exit(0);
+		}
 		double ans;
 
 		auto getvalidateInput = [](const std::string& prompt) -> double
@@ -157,7 +162,32 @@ namespace Cal
 			NPrinter(std::string("your answer is:"));
 			std::cout << ">>> " << ans << '\n';
 			break;
+		case 2:
+			ans = input1 - input2;
+			NPrinter(std::string("your answer is:"));
+			std::cout << ">>> " << ans << '\n';
+			break;
+		case 3:
+			ans = input1 * input2;
+			NPrinter(std::string("your answer is:"));
+			std::cout << ">>> " << ans << '\n';
+			break;
 		
+		case 4:
+			if (input2 == 0)
+			{
+				NPrinter(std::string("Answer is undefine"));
+				break;
+			}
+			else
+			{
+				ans = input1 / input2;
+				NPrinter(std::string("your answer is:"));
+				std::cout << ">>> " << ans << '\n';
+				break;
+			}
+
+
 		default :
 
 			NPrinter(std::string("put a valid input"));
