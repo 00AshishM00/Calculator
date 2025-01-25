@@ -18,6 +18,7 @@ I do not how icon configuration going work without Visual Studio?.thats you have
 Icon file website https://www.iconarchive.com/show/android-style-honeycomb-icons-by-wwalczyszyn/Calculator-icon.html
 
 ----Now to setup the project (windows)----
+
 1.find a desirable place on your drive.
 
 2.Open CMD/right click Open in Terminal.
