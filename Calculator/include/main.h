@@ -122,6 +122,11 @@ namespace Cal
 		if (ops == EI)
 		{
 			NPrinter(std::string("Exiting Calculator"));
+			emptyline();
+			Cal::NPrinter(std::string("Thank you! for visiting the project and the name is.......Ashish"));
+			emptyline();
+			emptyline();
+			emptyline();
 			std::exit(0);
 		}
 		double ans;
@@ -162,11 +167,13 @@ namespace Cal
 			NPrinter(std::string("your answer is:"));
 			std::cout << ">>> " << ans << '\n';
 			break;
+
 		case 2:
 			ans = input1 - input2;
 			NPrinter(std::string("your answer is:"));
 			std::cout << ">>> " << ans << '\n';
 			break;
+
 		case 3:
 			ans = input1 * input2;
 			NPrinter(std::string("your answer is:"));
