@@ -20,8 +20,12 @@ set(CALCULATOR_TARGET_NAME Calculator)
 add_executable(${CALCULATOR_TARGET_NAME}
 ${CALCULATOR_TARGET_NAME}/src/main.cpp
 ${CALCULATOR_TARGET_NAME}/include/main.h
+${CALCULATOR_TARGET_NAME}/resource/Calculator.rc
+${CALCULATOR_TARGET_NAME}/resource/resource.h
 )
 
 target_include_directories(${CALCULATOR_TARGET_NAME} PUBLIC
     ${CALCULATOR_TARGET_NAME}/include
 )
+
+set(RESOURCE_DIR ${CMAKE_SOURCE_DIR}/Calculator/resource)
