@@ -1,8 +1,11 @@
 This is my first project.first commit 12:02 pm IST 2025 jan 12 sunday 
 
 tools-
+
 Visual studio
+
 cmake
+
 git
 
 
@@ -11,6 +14,7 @@ My goal with this project is to make a simple c++ Calculator app with modular de
 I have configured this for windows environment,because I do not known how to configure this for other environment and I do not have access to a mac or linux device,but you can modify the Cmakelist.
 
 I do not how icon configuration going work without Visual Studio?.thats you have to figure it out.
+
 Icon file website https://www.iconarchive.com/show/android-style-honeycomb-icons-by-wwalczyszyn/Calculator-icon.html
 
 ----Now to setup the project (windows)----
