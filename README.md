@@ -31,7 +31,7 @@ Icon file website https://www.iconarchive.com/show/android-style-honeycomb-icons
 
 6.type- cd Build.// change directory to Build.
 
-7.type- cmake -S.. -B. //"-S.." means where is the cmake source file is and in this case one directory back in Calculator. "-B." means where the build directory is in this case current directory Build.
+7.type- cmake -S.. -B. //"-S.." means where the cmake source file is and in this case one directory back in Calculator. "-B." means where the build directory is in this case current directory Build.
 
 8.press- enter //it will create a visual studio solution file.
 
