@@ -15,14 +15,23 @@ Icon file website https://www.iconarchive.com/show/android-style-honeycomb-icons
 
 ----Now to setup the project (windows)----
 1.find a desirable place on your drive.
+
 2.Open CMD/right click Open in Terminal.
+
 3.type- git clone https://github.com/00AshishM00/Calculator.git (I hope you have git installed).// cloning the repository. 
+
 4.type- cd Calculator. // change directory to Calculator.
+
 5.type- mkdir Build.// it will create a folder call Build.
+
 6.type- cd Build.// change directory to Build.
+
 7.type- cmake -S.. -B. //"-S.." means where is the cmake source file is and in this case one directory back in Calculator. "-B." means where the build directory is in this case current directory Build.
+
 8.press- enter //it will create a visual studio solution file.
+
 9.open- the solution file and make the Calculator project as the start-up project.
+
 10.Do- whatever you want
 
 
